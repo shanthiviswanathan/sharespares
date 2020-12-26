@@ -86,7 +86,7 @@ CREATE TABLE `loftu_items` (
   `price` float DEFAULT NULL,
   `rental_cost` float DEFAULT NULL,
   `highlights` varchar(45) DEFAULT NULL,
-  `min_rental_days` INT DEFAILT 1,
+  `min_rental_days` INT DEFAULT 1,
   `max_rental_days` INT,
   `pickup_lead_days` INT,
   `thumbnail_image` longtext,
@@ -94,7 +94,7 @@ CREATE TABLE `loftu_items` (
   `created_date` datetime DEFAULT  NOW(), 
   `modified_by` varchar(255) DEFAULT NULL,   
   `modified_date` datetime DEFAULT NULL,  
-   INDEX `owner_id` (`owner_id`)
+   INDEX `owner_id` (`owner_id`),
   FULLTEXT KEY `title` (`title`),
   FULLTEXT KEY `subtitle` (`subtitle`),
   FULLTEXT KEY `title_2` (`title`,`subtitle`,`description`),
