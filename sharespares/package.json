@@ -1,22 +1,42 @@
 {
-  "name": "reservation-backend",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "nodemon ./bin/www"
+  "name": "sharespares",
+  "version": "1.0.0",
+  "description": "SS Backend",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shanthiviswanathan/sharespares.git"
   },
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shanthi",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
     "moment": "^2.27.0",
     "morgan": "~1.9.1",
     "multer": "^1.4.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "async": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "minimist": ">=1.2.3",
+    "clean-css": ">= 4.1.11",
+    "constantinople": ">=3.1.1",
+    "uglify-js": ">=2.6.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+    "nodemon": "^2.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/shanthiviswanathan/sharespares/issues"
+  },
+  "homepage": "https://github.com/shanthiviswanathan/sharespares#readme"
 }

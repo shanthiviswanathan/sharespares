@@ -31,6 +31,7 @@ app.use('/api/groups', groupsRouter);
 app.use('/api/items', itemsRouter);
 app.use('/api/reservations', reservationsRouter);
 app.use('/', loginRouter);
+require("./app/routes/upload.js")(app);
 
 // simple route
 app.get("/", (req, res) => {

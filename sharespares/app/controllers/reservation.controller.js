@@ -54,22 +54,3 @@ exports.findAllByItemId = (req, res) => {
       } else res.send(data);
     });
   };
-
-//  return item
-exports.returnItem = (req, res) => {
-
-  const  {item_id,member_id} =req.body
-  Reservations.returnItem({item_id,member_id}, (err, data) => {
-      if (err) {
-          if (err.kind === "not_found") {
-              res.status(500).send({
-                  message: "No item found with  id " + item_id
-              });
-          } else {
-              res.status(500).send({
-                  message: "Error retrieving item with id " 
-              });
-          }
-      } else res.send(data);
-  });
-};
