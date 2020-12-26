@@ -157,7 +157,7 @@ create table `loftu_ratings` (
   `rated_object_id` INT NOT NULL,
   `rated_object_type` VARCHAR(10) NOT NULL,
   `rated_date` datetime NOT NULL,
-  `rated_subobject` VARCHAR(20),
+  `rated_subject` VARCHAR(20),
   `rated_text` VARCHAR(1000),
   `rated_ref_id`  INT,
   `rated_ref_type`  VARCHAR(20),  
@@ -180,3 +180,33 @@ create table `loftu_ratings` (
   `modified_date` datetime DEFAULT NULL, 
   UNIQUE INDEX category_name (name)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+   insert into `shautfol_categories` (category_id, name, description, status, visibility, created_by) values (1, 'Kitchen', 'Cooking Related', 'ACTIVE', 
+  'PUBLIC', 1);
+    insert into `shautfol_categories` 
+  (category_id, name, description, status, visibility, created_by) 
+  values (2, 'Hiking', 'Light Weight Hiking Items', 'ACTIVE', 
+  'PUBLIC', 1);
+    insert into `shautfol_categories` 
+  (category_id, name, description, status, visibility, created_by) 
+  values (3, 'Museums', 'Museum Passes', 'ACTIVE', 
+  'PUBLIC', 1);
+      insert into `shautfol_categories` 
+  (category_id, name, description, status, visibility, created_by) 
+  values (4, 'Video Games', 'Any computer game', 'ACTIVE', 
+  'PUBLIC', 1);
+    insert into `shautfol_categories` 
+  (category_id, name, description, status, visibility, created_by) 
+  values (6, 'Cooking', 'Includes backing', 'ACTIVE', 
+  'PUBLIC', 1);
+    insert into `shautfol_categories` 
+  (category_id, name, description, status, visibility, created_by) 
+  values (7, 'Garden', 'Includes seed swaps', 'ACTIVE', 
+  'PUBLIC', 1);
+    insert into `shautfol_categories` 
+  (category_id, name, description, status, visibility, created_by) 
+  values (8, 'Electronics', 'Everything under the earth', 'ACTIVE', 
+  'PUBLIC', 1);
+    insert into `shautfol_categories` 
+  (category_id, name, description, status, visibility, created_by) 
+  values (9, 'Photography', 'Cameras, Video Recorders', 'ACTIVE', 
+  'PUBLIC', 1);
