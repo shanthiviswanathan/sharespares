@@ -48,6 +48,16 @@ CREATE TABLE `loftu_groups` (
   FOREIGN KEY (admin_id) REFERENCES loftu_members(member_id) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+insert into loftu_members (member_id,email, hash, salt, display_name, 
+citystate, country, security_question1, security_answer1, security_question2,
+security_answer2, status)
+ values ('fR7fqZg9TSePCJYjDB4NUqWmZAH2', 'shautfol@gmail.com', 'a55f42645a6cb888ed400bc993cdb77a868a45e6ef35a4ad3b67b18f515dbf674c5129fc19026fc44bc47c51aee5582ed793f8164f205641b197f73e67d8a5a4', 'a55ff99aafd022fd50c2d86d7a4fb38d', 'shautfol', 'San Francisco, CA', 'USA',
+ 'a', 'a', 'b','b','ACTIVE');
+
+insert into loftu_groups (id, name, description, status, location, visibility, member_limit, admin_id)
+values (1, 'Gardening', 'NJ Gardeneners', 'ACTIVE', 'San Francisco, CA', 
+'PUBLIC', 10, 'fR7fqZg9TSePCJYjDB4NUqWmZAH2');
+
 CREATE TABLE `loftu_group_members` (
   `group_member_id` int  PRIMARY KEY AUTO_INCREMENT,
   `group_id` int NOT NULL,
@@ -180,33 +190,36 @@ create table `loftu_ratings` (
   `modified_date` datetime DEFAULT NULL, 
   UNIQUE INDEX category_name (name)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-   insert into `shautfol_categories` (category_id, name, description, status, visibility, created_by) values (1, 'Kitchen', 'Cooking Related', 'ACTIVE', 
+   insert into `loftu_categories` (category_id, name, description, status, visibility, created_by) values (1, 'Kitchen', 'Cooking Related', 'ACTIVE', 
   'PUBLIC', 1);
-    insert into `shautfol_categories` 
+  delete * from loftu_categories;
+  
+    insert into `loftu_categories` 
   (category_id, name, description, status, visibility, created_by) 
   values (2, 'Hiking', 'Light Weight Hiking Items', 'ACTIVE', 
   'PUBLIC', 1);
-    insert into `shautfol_categories` 
+    insert into `loftu_categories` 
   (category_id, name, description, status, visibility, created_by) 
   values (3, 'Museums', 'Museum Passes', 'ACTIVE', 
   'PUBLIC', 1);
-      insert into `shautfol_categories` 
+      insert into `loftu_categories` 
   (category_id, name, description, status, visibility, created_by) 
   values (4, 'Video Games', 'Any computer game', 'ACTIVE', 
   'PUBLIC', 1);
-    insert into `shautfol_categories` 
+    insert into `loftu_categories` 
   (category_id, name, description, status, visibility, created_by) 
   values (6, 'Cooking', 'Includes backing', 'ACTIVE', 
   'PUBLIC', 1);
-    insert into `shautfol_categories` 
+    insert into `loftu_categories` 
   (category_id, name, description, status, visibility, created_by) 
   values (7, 'Garden', 'Includes seed swaps', 'ACTIVE', 
   'PUBLIC', 1);
-    insert into `shautfol_categories` 
+    insert into `loftu_categories` 
   (category_id, name, description, status, visibility, created_by) 
   values (8, 'Electronics', 'Everything under the earth', 'ACTIVE', 
   'PUBLIC', 1);
-    insert into `shautfol_categories` 
+    insert into `loftu_categories` 
   (category_id, name, description, status, visibility, created_by) 
   values (9, 'Photography', 'Cameras, Video Recorders', 'ACTIVE', 
   'PUBLIC', 1);
+  
