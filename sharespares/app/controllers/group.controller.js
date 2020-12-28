@@ -15,8 +15,8 @@ exports.create = (req, res) => {
   const group = new Group({
     name: req.body.name,
     description: req.body.description,
-    status: 'A',
-    admin: req.body.admin,
+    status: 'ACTIVE',
+    admin_id: req.body.admin,
     location: req.body.location,
     start_datetime: moment().format('YYYY-MM-DD HH:mm:ss'),
     end_datetime: req.body.endDatetime,

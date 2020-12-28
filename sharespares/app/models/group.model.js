@@ -28,7 +28,7 @@ function createGroup (newGroup) {
 
 function createGroupMember (id, newGroup, memType) {
   return new Promise ((resolve, reject) => {
-    sql.query("INSERT INTO loftu_group_members (group_id, member_id, status, subscribe_date, member_type) VALUES (?,?, ?, ?, ?)", [id, newGroup.admin, newGroup.status, newGroup.start_date, memType], (err, res) => err ? reject(err): resolve(res))
+    sql.query("INSERT INTO loftu_group_members (group_id, member_id, status, subscribe_date, member_type) VALUES (?,?, ?, ?, ?)", [id, newGroup.admin_id, newGroup.status, newGroup.start_date, memType], (err, res) => err ? reject(err): resolve(res))
   })
 }
 
@@ -69,7 +69,7 @@ Group.create = async (newGroup, memType, result) => {
 //};
 
 Group.findById = (groupId, callback) => {
-  var query1 = `SELECT * FROM loftu_groups WHERE id = ${groupId}`
+  var query1 = `SELECT * FROM loftu_groups WHERE id = ${groupId} AND status = 'ACTIVE'`
   var query2 = `SELECT * FROM loftu_items WHERE owner_id = ${groupId} AND owner_type='GROUP'`
   var query3 = `SELECT * FROM loftu_group_members WHERE group_id = ${groupId}`
   var return_data = {};
